@@ -4,18 +4,41 @@
     <meta charset="utf-8" />
     <title>Login</title>
     <script src="../js/lib/vue.js"></script>
+    <script src="../js/lib/jquery-1.9.0.min.js"></script>
 </head>
 <body>
     <div id="mainContent" style="text-align:center">
         <div id="loginApp">
-            <span id="showMsg">{{name}}</span>
+            <span v-if="canLogin==true" style="left:0px">{{WelcomeMsg}}{{LoginStatus}}</span>
             <form id="logForm">
                 账号<input type="text" v-model="name" />
                 密码<input type="password" v-model="pwd" />
-                <input type="submit" v-on:click="doLogin" value="登陆"/>
+                <input type="button" v-on:click="doLogin()" value="登陆" />
             </form>
+            <form>
+                <!--用compute属性的方法与值属性是绑定的，可以做到级联的效果-->
+                小时<input type="text" v-model="Hour" />
+                分钟<input type="text" v-model="Minute"/>
+                <!--用watch属性的方法能检测值得改变，达到级联效果-->
+                <!--小时<input type="text" v-model="" />
+                分钟<input type="text" v-model=""/>-->
+            </form>
+            <table>
+                <thead style="background-color:blue;color:white;font-weight:bold;">
+                    <tr><td>序号</td><td>编号</td><td>书名</td></tr>
+                </thead>
+                <tbody>
+                    <!--此处排序好像失败了，原因在哪？-->
+                    <tr v-for="(value,key,index) in bookList":key="(value)">
+                        <td style="border:solid 1px black">{{index}}</td>
+                        <td style="border:solid 1px black">{{key}}</td>
+                        <td style="border:solid 1px black">{{value}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <iframe v-bind:src="dataFrameSrc" style="width:100%;height:700px;"></iframe>
         </div>
     </div>
-    <script src="../js/loginPage/loginApp.js"></script>
+    <script src="../js/app/loginApp.js"></script>
 </body>
 </html>
