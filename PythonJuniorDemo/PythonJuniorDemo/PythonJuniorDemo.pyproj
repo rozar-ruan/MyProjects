@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7a97ace5-165d-46ea-a48e-c1f113a71be7</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>PythonJuniorDemo.py</StartupFile>
+    <StartupFile>Snake\SnakeGame.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,37 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="PythonJuniorDemo.py" />
+    <Compile Include="Snake\SnakeGame.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TankWar\Model\Map.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TankWar\Model\MyObject.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TankWar\Model\Position.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TankWar\Model\Vehicle.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TankWar\Model\package\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TankWar\Start\run.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Snake\" />
+    <Folder Include="TankWar\" />
+    <Folder Include="TankWar\Model\" />
+    <Folder Include="TankWar\Model\package\" />
+    <Folder Include="TankWar\Start\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="TankWar\Model\Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

@@ -1,6 +1,6 @@
 print("hello python")
 print('hello python')
-print("i said ,\"hello,'python'\"")#单引号双引号可以嵌套使用，转义符同样生效
+print("i said ,\"hello,'python'\"")#单引号双引号可以嵌套使用，转义符同样生效 i said ,"hello,'python'"
 print('i said "hello python"')
 print(""" i said,
 hello 
@@ -9,15 +9,15 @@ print("i\nsaid\nhello\npython")
 print("""i\nsaid\nhello\npython""")#即使是用三个引号的方式，转移符 依然在字符串中生效
 print("i said,%s" % ("hello python"))
 #print("i said,%s"("hello")) #这句会报错 % 不可以掉
-print(10 / 5)
-print(type(10 / 5))
+print(10 / 5)#2.0
+print(type(10 / 5))#<class 'float'>
 print(10.2 % 3)
 print(10 % 3)
 testStr = "this is a %s" % "testStr"
 print(testStr)
 tupleVar = ("12",234,"23")#元组测试
-print(tupleVar)
-print("%s%s%s" % tupleVar)
+print(tupleVar)# ('12', 234, '23')
+print("%s%s%s" % tupleVar)#1223423
 print("len is %d,the last one is %s" % (len(tupleVar),tupleVar[len(tupleVar) - 1]))
 single_element_tuple = ("the sole element",)#空元组在创建的时候，需要多加一个逗号，不然会和被当成一个字符串
 try:
@@ -41,10 +41,12 @@ dictVar["1th"] = "1"
 dictVar["2nd"] = "2"
 dictVar["3rd"] = "3"
 print(dictVar)
-print(dictVar.keys())
-print(dictVar.values())
-print(list(dictVar.keys()))
-print(list(dictVar.values()))
+print('dic[1th]'+dictVar["1th"])
+#print('dic.a'+dictVar.a)
+print(dictVar.keys())#dict_keys(['1th', '2nd', '3rd'])
+print(dictVar.values())#dict_values(['1', '2', '3'])
+print(list(dictVar.keys()))#['1th', '2nd', '3rd']
+print(list(dictVar.values()))#['1', '2', '3']
 try:
     print(dictVar[0:2])
 except Exception as er :
@@ -54,7 +56,7 @@ try:
     strVar[0]="0"    
 except Exception as er:
     print(er)#字符串是不能更改的
-print(strVar[3:5]) #结果45，[a:b] 从小标a开始截到下表为b之前
+print(strVar[3:5]) #结果45，[a:b] 从下标a开始截到下标为b之前
 print(strVar[3:3]) #如果a>=b 不会报错，返回空字符串
 print(strVar[-5:3])#结果23，相当于[1:3]
 print(strVar[-5:-2])#结果234，相当于[1:4]
